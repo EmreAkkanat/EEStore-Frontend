@@ -1,0 +1,11 @@
+.home_page {
+    width: 100%;
+    max-width: 1300px;
+    margin: 2rem 0;
+
+    .box_container {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(10rem, 13rem));
+        gap: 1rem;
+    }
+}

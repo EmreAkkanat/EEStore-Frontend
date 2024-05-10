@@ -1,0 +1,33 @@
+.footer {
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    .footer_container {
+        width: 100%;
+        max-width: 1300px;
+        padding: 3rem 1rem;
+        display: flex;
+        flex-wrap: wrap;
+
+        .footer_items {
+            list-style: none;
+            width: 25%;
+            padding: 0 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+
+            .title {
+                font-weight: 400;
+                font-size: 130%;
+            }
+
+            .footer_item {
+                font-size: 80%;
+            }
+        }
+    }
+}
