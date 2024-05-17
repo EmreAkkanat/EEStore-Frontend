@@ -1,20 +1,25 @@
-import React, { useState } from 'react';
-
+import React, { ReactNode, useState } from 'react';
 import '../styles/components/MainLayout.scss';
+
+// components
 import Header from './Header';
 import Footer from './Footer';
 
-const MainLayout = ({ children }) => {
-    const [navItemToggle, setNavItemToggle] = useState(0);
+interface MainLayoutProps {
+    children: ReactNode;
+}
+
+const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+    const [navItemToggle, setNavItemToggle] = useState<number>(0);
 
     return (
         <div className='main_layout'>
-            <Header className="header" navItemToggle={navItemToggle} setNavItemToggle={setNavItemToggle} />
+            <Header navItemToggle={navItemToggle} setNavItemToggle={setNavItemToggle} />
             <div className='children'>
                 {navItemToggle > 0 && (<div className='bg_fade' />)}
                 {children}
             </div>
-            <Footer onMouseEnter={() => setNavItemToggle(0)} />
+            <Footer/>
         </div>
     );
 };

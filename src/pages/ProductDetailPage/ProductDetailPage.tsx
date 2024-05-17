@@ -1,20 +1,24 @@
 import React from 'react';
-import { IoIosArrowForward } from "react-icons/io";
-import { FaRegStar } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
-import { FaRegStarHalfStroke } from "react-icons/fa6";
-import MainLayout from "../../components/MainLayout";
 import "../../styles/pages/ProductDetailPage.scss";
 import { Link } from 'react-router-dom';
-import { increase, decrease } from '../../store/actions/counterActions';
+
+// redux
 import { useDispatch, useSelector } from 'react-redux';
-import { BsFillBasket2Fill } from "react-icons/bs";
-import { BsBookmark } from "react-icons/bs";
-import { BsBookmarkFill } from "react-icons/bs";
+import { RootState, AppDispatch } from '../../store';
+import { increase, decrease } from '../../store/actions/counterActions';
+
+// components
+import MainLayout from "../../components/MainLayout";
+
+// icons
+import { IoIosArrowForward } from "react-icons/io";
+import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaRegStarHalfStroke } from "react-icons/fa6";
+import { BsFillBasket2Fill, BsBookmark/* , BsBookmarkFill */ } from "react-icons/bs";
 
 const ProductDetailPage = () => {
-    const dispatch = useDispatch();
-    const value = useSelector((state) => state.counter.value);
+    const dispatch = useDispatch<AppDispatch>();
+    const value = useSelector((state: RootState) => state.counter.value);
 
     return (
         <MainLayout>
@@ -22,11 +26,11 @@ const ProductDetailPage = () => {
                 <div className="category_path">
                     <Link to="/" className="category_path_name">Anasayfa</Link>
                     <IoIosArrowForward />
-                    <Link className="category_path_name">Erkek</Link>
+                    <Link to="" className="category_path_name">Erkek</Link>
                     <IoIosArrowForward />
-                    <Link className="category_path_name">Giyim</Link>
+                    <Link to="" className="category_path_name">Giyim</Link>
                     <IoIosArrowForward />
-                    <Link className="category_path_name">Tişört</Link>
+                    <Link to="" className="category_path_name">Tişört</Link>
                 </div>
 
                 <div className="product_detail_container">
@@ -56,9 +60,15 @@ const ProductDetailPage = () => {
                                     <div className="star_number">(14999)</div>
                                 </div>
 
-                                <div className="product_price">124,99 <span className='currency'>TL</span></div>
+                                <div className="product_price">
+                                    124,99
+                                    <span className='currency'>TL</span>
+                                </div>
 
-                                <div className="installment_options">21 TL x 6 aya varan <span className='bold'>Taksitle</span></div>
+                                <div className="installment_options">
+                                    21 TL x 6 aya varan
+                                    <span className='bold'>Taksitle</span>
+                                </div>
                             </div>
 
                             <div className="briefly_right">
@@ -102,27 +112,13 @@ const ProductDetailPage = () => {
                                 <h5 className="title">Beden Seçenekleri</h5>
 
                                 <div className="card_container">
-                                    <div className="size_option_card">
-                                        XS
-                                    </div>
-                                    <div className="size_option_card">
-                                        S
-                                    </div>
-                                    <div className="size_option_card">
-                                        M
-                                    </div>
-                                    <div className="size_option_card">
-                                        L
-                                    </div>
-                                    <div className="size_option_card">
-                                        XL
-                                    </div>
-                                    <div className="size_option_card">
-                                        XXL
-                                    </div>
-                                    <div className="size_option_card">
-                                        3XL
-                                    </div>
+                                    <div className="size_option_card">XS</div>
+                                    <div className="size_option_card">S</div>
+                                    <div className="size_option_card">M</div>
+                                    <div className="size_option_card">L</div>
+                                    <div className="size_option_card">XL</div>
+                                    <div className="size_option_card">XXL</div>
+                                    <div className="size_option_card">3XL</div>
                                 </div>
                             </div>
                         </div>
@@ -132,7 +128,7 @@ const ProductDetailPage = () => {
                             <div className="counter">
                                 <button className="counter_btn" onClick={() => dispatch(decrease(value))}>-</button>
                                 <div className="counter_value">{value}</div>
-                                <button className="counter_btn" onClick={() => dispatch(increase(value))}>+</button>
+                                <button className="counter_btn" onClick={() => dispatch(increase())}>+</button>
                             </div>
 
                             <button className="basket_btn">

@@ -1,8 +1,9 @@
 import React from 'react';
+import "../../styles/pages/HomePage.scss";
 
+// components
 import MainLayout from '../../components/MainLayout';
 import ProductBox from '../../components/ProductBox';
-import "../../styles/pages/HomePage.scss";
 
 const HomePage = () => {
 

@@ -1,11 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaRegStar } from "react-icons/fa";
-import { FaStar } from "react-icons/fa";
-import { FaRegStarHalfStroke } from "react-icons/fa6";
-
-
 import "../styles/components/ProductBox.scss";
+import { Link } from 'react-router-dom';
+
+// icons
+import { FaRegStar, FaStar } from "react-icons/fa";
+import { FaRegStarHalfStroke } from "react-icons/fa6";
 
 const ProductBox = () => {
     return (
