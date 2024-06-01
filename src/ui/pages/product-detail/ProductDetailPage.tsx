@@ -1,14 +1,14 @@
 import React from 'react';
-import "../../styles/pages/ProductDetailPage.scss";
+import "./ProductDetailPage.scss";
 import { Link } from 'react-router-dom';
 
 // redux
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, AppDispatch } from '../../store';
-import { increase, decrease } from '../../store/actions/counterActions';
+import { RootState, AppDispatch } from '../../../store/ui';
+import { decrease, increase } from '../../../store/ui/actions/counterActions';
 
 // components
-import MainLayout from "../../components/MainLayout";
+import Layout from '../../layout/Layout';
 
 // icons
 import { IoIosArrowForward } from "react-icons/io";
@@ -21,7 +21,7 @@ const ProductDetailPage = () => {
     const value = useSelector((state: RootState) => state.counter.value);
 
     return (
-        <MainLayout>
+        <Layout>
             <div className='product_detail'>
                 <div className="category_path">
                     <Link to="/" className="category_path_name">Anasayfa</Link>
@@ -78,7 +78,7 @@ const ProductDetailPage = () => {
                         </div>
 
                         <div className="option_container">
-                            <div className="color_option_container">
+                            <div className="option_container_section">
                                 <h5 className="title">Renk Seçenekleri</h5>
 
                                 <div className="card_container">
@@ -89,26 +89,10 @@ const ProductDetailPage = () => {
                                             <div className="price">124,99 TL</div>
                                         </div>
                                     </div>
-
-                                    <div className="color_option_card">
-                                        <img src="/img/product.jpg" alt="product_detail_image" className='product_detail_img' />
-                                        <div className="color_sec_right">
-                                            <div className="color">Siyah</div>
-                                            <div className="price">124,99 TL</div>
-                                        </div>
-                                    </div>
-
-                                    <div className="color_option_card">
-                                        <img src="/img/product.jpg" alt="product_detail_image" className='product_detail_img' />
-                                        <div className="color_sec_right">
-                                            <div className="color">Siyah</div>
-                                            <div className="price">124,99 TL</div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
 
-                            <div className="size_option_container">
+                            <div className="option_container_section">
                                 <h5 className="title">Beden Seçenekleri</h5>
 
                                 <div className="card_container">
@@ -139,7 +123,7 @@ const ProductDetailPage = () => {
                     </div>
                 </div>
             </div>
-        </MainLayout>
+        </Layout>
     );
 };
 

@@ -1,15 +1,15 @@
 import React, { ReactNode, useState } from 'react';
-import '../styles/components/MainLayout.scss';
+import './Layout.scss';
 
 // components
-import Header from './Header';
-import Footer from './Footer';
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
 
-interface MainLayoutProps {
+interface LayoutProps {
     children: ReactNode;
 }
 
-const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }) => {
     const [navItemToggle, setNavItemToggle] = useState<number>(0);
 
     return (
@@ -24,4 +24,4 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     );
 };
 
-export default MainLayout;
+export default Layout;

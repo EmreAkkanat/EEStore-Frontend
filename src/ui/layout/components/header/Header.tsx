@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import '../styles/components/Header.scss';
+import './Header.scss';
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useMotionValueEvent } from "framer-motion";
 

@@ -149,7 +149,7 @@
                 flex-direction: column;
                 gap: 1.5rem;
 
-                .color_option_container {
+                .option_container_section {
                     width: 100%;
                     display: flex;
                     flex-direction: column;
@@ -208,26 +208,6 @@
                                 }
                             }
                         }
-                    }
-                }
-
-                .size_option_container {
-                    width: 100%;
-                    display: flex;
-                    flex-direction: column;
-
-                    .title {
-                        color: #484848;
-                        border-bottom: 1px solid #ddd;
-                        padding-bottom: 0.5rem;
-                        margin-bottom: 0.5rem;
-                        font-weight: 500;
-                    }
-
-                    .card_container {
-                        display: flex;
-                        flex-direction: row;
-                        gap: 0.5rem;
 
                         .size_option_card {
                             border: 2px solid #f1f1f1;
