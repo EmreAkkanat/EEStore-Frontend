@@ -77,6 +77,12 @@ const rows = [
   createData('Russia', 'RU', 146793744, 17098246),
   createData('Nigeria', 'NG', 200962417, 923768),
   createData('Brazil', 'BR', 210147125, 8515767),
+  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('Brazil', 'BR', 210147125, 8515767),
+  createData('Brazil', 'BR', 210147125, 8515767),
 ];
 
 export default function StickyHeadTable() {
@@ -93,8 +99,8 @@ export default function StickyHeadTable() {
   };
 
   return (
-    <Paper sx={{ width: '100%', overflow: 'hidden', height: "100%"}}>
-      <TableContainer sx={{ maxHeight: "100%", overflowX: 'auto' }}>
+    <Paper sx={{ width:"100%" ,height: "100%", display: "flex", flexDirection: "column", justifyContent: "space-between", overflow: "hidden"}}>
+      <TableContainer sx={{ maxHeight: "100%", overflow: 'auto', flexGrow: 1 }}>
         <Table stickyHeader aria-label="sticky table">
           <TableHead>
             <TableRow>
@@ -123,7 +129,8 @@ export default function StickyHeadTable() {
           </TableBody>
         </Table>
       </TableContainer>
-      <TablePagination rowsPerPageOptions={[10, 25, 100]} component="div" count={rows.length} rowsPerPage={rowsPerPage} page={page} onPageChange={handleChangePage} onRowsPerPageChange={handleChangeRowsPerPage}/>
+
+      <TablePagination sx={{overflowY: "hidden",padding: 2, minHeight: 50}} rowsPerPageOptions={[10, 25, 100]} component="div" count={rows.length} rowsPerPage={rowsPerPage} page={page} onPageChange={handleChangePage} onRowsPerPageChange={handleChangeRowsPerPage}/>
     </Paper>
   );
 }

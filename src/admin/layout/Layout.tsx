@@ -13,16 +13,13 @@ const Layout = () => {
   }));
 
   return (
-    <div>
+    <div style={{maxHeight: "100vh", height: "100vh", overflow: "hidden" }}>
       <CssBaseline />
-
       <Box sx={{ display: 'flex' }}>
         <Sidebar />
-
-        <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+        <Box component="main" sx={{p:3, width:"100%", minWidth:"300px", height: "100vh", maxHeight: "100vh", overflow: "hidden", display: "flex", flexDirection: "column",flexGrow: 1 }}>
           <DrawerHeader />
-          
-          <Outlet />
+          <Outlet/>
         </Box>
       </Box>
     </div>
