@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 // redux
 import { useDispatch, useSelector } from 'react-redux';
-import { RootState, AppDispatch } from '../../../store/ui';
+import { RootState, AppDispatch } from '../../..//store';
 import { decrease, increase } from '../../../store/ui/actions/counterActions';
 
 // components
@@ -18,7 +18,7 @@ import { BsFillBasket2Fill, BsBookmark/* , BsBookmarkFill */ } from "react-icons
 
 const ProductDetailPage = () => {
     const dispatch = useDispatch<AppDispatch>();
-    const value = useSelector((state: RootState) => state.counter.value);
+    const value = useSelector((state: RootState) => state.ui.counter.value);
 
     return (
         <Layout>
