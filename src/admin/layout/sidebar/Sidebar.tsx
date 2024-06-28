@@ -18,6 +18,8 @@ import { IoHomeSharp } from "react-icons/io5";
 import { FaAngleLeft, FaBoxOpen, FaBars } from "react-icons/fa";
 import { FaBagShopping } from "react-icons/fa6";
 import { TbCategoryFilled } from "react-icons/tb";
+import { BiSolidCategoryAlt } from "react-icons/bi";
+import { MdCategory } from "react-icons/md";
 
 
 export default function Sidebar() {
@@ -62,7 +64,25 @@ export default function Sidebar() {
 
         <List>
           {[
-            { name: "Categories", link: "/admin/categories", icon: <TbCategoryFilled /> },
+            { name: "Main Category", link: "/admin/categories/category-main", icon: <BiSolidCategoryAlt /> },
+            { name: "Category", link: "/admin/categories/category", icon: <TbCategoryFilled /> },
+            { name: "Sub Category", link: "/admin/categories/category-sub", icon: <MdCategory /> }
+          ].map((text, index) => (
+            <NavLink key={index} to={text.link} title={text.name}>
+              <ListItem disablePadding sx={{ display: 'block' }}>
+                <ListItemButton sx={{ minHeight: 48, justifyContent: open ? 'initial' : 'center', px: 2.5, }}>
+                  <ListItemIcon sx={{ minWidth: 0, mr: open ? 3 : 'auto', justifyContent: 'center', fontSize: '130%' }}>{text.icon}</ListItemIcon>
+                  <ListItemText primary={text.name} sx={{ opacity: open ? 1 : 0 }} />
+                </ListItemButton>
+              </ListItem>
+            </NavLink>
+          ))}
+        </List>
+
+        <Divider />
+
+        <List>
+          {[
             { name: "Products", link: "/admin/products", icon: <FaBoxOpen /> },
             { name: "Orders", link: "/admin/orders", icon: <FaBagShopping /> }
           ].map((text, index) => (

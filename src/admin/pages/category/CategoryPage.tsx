@@ -1,11 +1,11 @@
 import React from 'react';
-import Table from '../../components/data-table/DataTable';
-import FullScreenDialog from '../../components/dialog/FullScreenDialog';
+import Table from '../../components/data-table/DataTableComponent';
+import CreateCategory from './components/CreateCategoryComponent';
 
 const CategoryPage = () => {  
   return (
     <React.Fragment>
-      <FullScreenDialog/>
+      <CreateCategory/>
       <Table />
     </React.Fragment>
   )

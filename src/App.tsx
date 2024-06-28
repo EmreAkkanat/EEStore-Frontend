@@ -19,11 +19,16 @@ function App() {
       <Route index path='/' element={<HomePage />} />
       <Route index path='/product-detail' element={<ProductDetailPage />} />
       <Route path="/admin" element={<Layout />}>
-          <Route index element={<AdminHomePage />} />
-          <Route path="categories" element={<CategoryPage />} />
-          <Route path="products" element={<ProductPage />} />
-          <Route path="orders" element={<OrderPage />} />
-        </Route>
+        <Route index element={<AdminHomePage />} />
+
+
+        <Route index path="categories/category-main" element={<CategoryPage />} />
+        <Route path="categories/category" element={<CategoryPage />} />
+        <Route path="categories/category-sub" element={<CategoryPage />} />
+
+        <Route path="products" element={<ProductPage />} />
+        <Route path="orders" element={<OrderPage />} />
+      </Route>
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   );
